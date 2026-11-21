@@ -44,9 +44,9 @@ def get_programs():
     if current_day:
         schedules.append(current_day)
 
-    weekday = schedules if len(schedules) > 0 else []
-    saturday = schedules if len(schedules) > 1 else weekday
-    sunday = schedules if len(schedules) > 2 else saturday
+    weekday = schedules[0] if len(schedules) > 0 else []
+    saturday = schedules[1] if len(schedules) > 1 else weekday
+    sunday = schedules[2] if len(schedules) > 2 else saturday
 
     now_ph = datetime.now(TZ)
     programs = []
@@ -65,4 +65,3 @@ def get_programs():
                 "title": title
             })
     return CHANNEL_META, programs
-
