@@ -61,14 +61,15 @@ def generate_readme(all_channels, by_area, by_category):
 
     lines.extend([
         "",
-        "### 📋 Supported Channels",
-        "| Channel Name | `tvg-id` | Area | Category |",
-        "| :--- | :--- | :--- | :--- |"
+        "### 📋 Individual Channels",
+        "| Channel Name | `tvg-id` | Area | Category | Single-Channel EPG URL |",
+        "| :--- | :--- | :--- | :--- | :--- |"
     ])
     for meta, _ in sorted(all_channels, key=lambda x: x["name"]):
         areas = ", ".join(meta.get("area", []))
         cats = ", ".join(meta.get("category", []))
-        lines.append(f"| {meta['name']} | `{meta['id']}` | {areas} | {cats} |")
+        ch_slug = slugify(meta["id"])
+        lines.append(f"| {meta['name']} | `{meta['id']}` | {areas} | {cats} | `{REPO_RAW_BASE}/channel/{ch_slug}.xml` |")
 
     with open("README.md", "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
@@ -96,6 +97,8 @@ def main():
         write_xml(f"epg/area/{slugify(area)}.xml", items)
     for cat, items in by_category.items():
         write_xml(f"epg/category/{slugify(cat)}.xml", items)
+    for meta, programs in all_channels:
+        write_xml(f"epg/channel/{slugify(meta['id'])}.xml", [(meta, programs)])
 
     generate_readme(all_channels, by_area, by_category)
 
