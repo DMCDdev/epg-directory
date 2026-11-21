@@ -1,190 +1,163 @@
-from datetime import datetime, timedelta, timezone
-import html
+import json
 import re
-import subprocess
-from bs4 import BeautifulSoup
-import requests
+import urllib.request
+from datetime import datetime, timedelta, timezone
 
-URL = "https://alltv.ph/dailyschedule/"
+API_URL = "https://televi.fandom.com/api.php?action=parse&page=ALLTV2_Program_Schedule_(2026)&prop=wikitext&format=json"
 TZ = timezone(timedelta(hours=8))
 
 CHANNEL_META = {
     "id": "AllTV.ph",
-    "name": "ALLTV2",
+    "name": "ALLTV",
+    "display_names": ["ALLTV", "ALLTV2", "All TV", "AllTV.ph"],
     "area": ["Philippines"],
     "category": ["Entertainment"]
 }
 
-DAYS_MAP = {
-    0: "category-monday",
-    1: "category-tuesday",
-    2: "category-wednesday",
-    3: "category-thursday",
-    4: "category-friday",
-    5: "category-saturday",
-    6: "category-sunday"
+# Fallback schedule in case the Fandom API is temporarily unreachable
+FALLBACK_SCHEDULES = {
+    "weekday": [
+        ("5:30am", "Kapamilya Daily Mass"),
+        ("6:00am", "Knowledge Channel School Anywhere"),
+        ("7:30am", "The Flying House"),
+        ("8:00am", "Superbook Reimagined (season 5)"),
+        ("8:30am", "Blockbusters sa Umaga"),
+        ("12:00pm", "It's Showtime"),
+        ("2:30pm", "Mommy Guard"),
+        ("3:15pm", "Senior High (rerun)"),
+        ("4:00pm", "Kapamilya Gold Hits"),
+        ("5:30pm", "TV Patrol Express"),
+        ("5:45pm", "Minute to Win It"),
+        ("6:30pm", "TV Patrol"),
+        ("8:00pm", "Coco Martin: Sigabo"),
+        ("8:45pm", "Someone, Someday"),
+        ("9:30pm", "The Loyalty Game: Level Up!"),
+        ("10:15pm", "Breeze by the Sea"),
+        ("11:00pm", "The World Tonight"),
+        ("12:00am", "Off air")
+    ],
+    "saturday": [
+        ("5:00am", "Tomorrow World"),
+        ("5:30am", "Kapamilya Daily Mass"),
+        ("6:00am", "LEGO City Adventures"),
+        ("6:30am", "Crayon Shai Chan"),
+        ("7:00am", "Team YeY! (rerun)"),
+        ("7:30am", "Wansapanataym (rerun)"),
+        ("8:30am", "Sagot ni Doc."),
+        ("9:30am", "Dapat Legal"),
+        ("10:15am", "Blockbusters sa Umaga"),
+        ("12:00pm", "It's Showtime"),
+        ("2:30pm", "Kapamilya Action Sabado"),
+        ("4:00pm", "Tao Po!"),
+        ("4:45pm", "Philippines' Oddest Job"),
+        ("5:00pm", "S.O.C.O.: Scene Of the Crime Operatives"),
+        ("5:45pm", "TV Patrol Weekend"),
+        ("6:45pm", "Ibang Level To!"),
+        ("7:30pm", "Kapamilya, Deal or No Deal (season 6)"),
+        ("8:30pm", "MMK: Maaalala Mo Kaya"),
+        ("9:30pm", "Matteo G. Primetime"),
+        ("10:30pm", "Super Kapamilya Blockbusters"),
+        ("12:30am", "Off air")
+    ],
+    "sunday": [
+        ("6:00am", "The Healing Eucharist"),
+        ("7:00am", "Wikaharian"),
+        ("7:25am", "Ready, Set, Read!"),
+        ("7:50am", "MathDali"),
+        ("8:15am", "Estudyantipid"),
+        ("8:40am", "Wow"),
+        ("9:00am", "Wansapanataym (rerun)"),
+        ("10:00am", "Blockbusters sa Umaga"),
+        ("12:00pm", "Vibe+ Playback"),
+        ("1:45pm", "Sunday Blockbusters"),
+        ("3:15pm", "My Puhunan: Kaya Mo!"),
+        ("3:45pm", "Philippines' Most Haunted"),
+        ("4:15pm", "Rated Korina"),
+        ("5:15pm", "TV Patrol Weekend"),
+        ("6:15pm", "Ibang Level To!"),
+        ("7:00pm", "ASAP XP"),
+        ("9:00pm", "Kapamilya, Deal or No Deal (season 6)"),
+        ("10:00pm", "MMK: Maalaala Mo Kaya"),
+        ("11:00pm", "Sunday's Best"),
+        ("1:00am", "Off air")
+    ]
 }
-
-# Verified schedule from alltv.ph/dailyschedule/
-FALLBACK_WEEKDAY = [
-    ("Kapamilya Daily Mass", "5:30 AM", "6:00 AM"),
-    ("School Anywhere", "6:00 AM", "7:00 AM"),
-    ("Komiks Presents", "7:00 AM", "8:00 AM"),
-    ("The Flying House", "8:00 AM", "8:30 AM"),
-    ("Superbook Reimagined", "8:30 AM", "9:00 AM"),
-    ("Magandang Buhay", "9:00 AM", "10:00 AM"),
-    ("Kapamilya Blockbusters", "10:00 AM", "12:00 NN"),
-    ("It's Showtime", "12:00 PM", "2:30 PM"),
-    ("Lavender Fields", "2:30 PM", "3:15 PM"),
-    ("Senior High", "3:15 PM", "4:00 PM"),
-    ("Kapamilya Gold Hits", "4:00 PM", "5:30 PM"),
-    ("TV Patrol Express", "5:30 PM", "5:45 PM"),
-    ("Minute to Win It", "5:45 PM", "6:30 PM"),
-    ("TV Patrol", "6:30 PM", "8:00 PM"),
-    ("FPJ's Batang Quiapo", "8:00 PM", "8:45 PM"),
-    ("Roja", "8:45 PM", "9:30 PM"),
-    ("What Lies Beneath", "9:30 PM", "10:15 PM"),
-    ("Forbidden Flower", "10:15 PM", "10:45 PM"),
-    ("The World Tonight", "10:45 PM", "11:15 PM"),
-]
-
-FALLBACK_SATURDAY = [
-    ("Bubu And The Little Owls", "6:00 AM", "6:30 AM"),
-    ("Dinoman", "6:30 AM", "7:00 AM"),
-    ("Team Yey", "7:00 AM", "7:30 AM"),
-    ("Wansapanataym", "7:30 AM", "8:30 AM"),
-    ("KB Family Weekend", "8:30 AM", "12:00 PM"),
-    ("It's Showtime", "12:00 PM", "2:30 PM"),
-    ("Kapamilya Action Sabado", "3:15 PM", "4:30 PM"),
-    ("SOCO", "4:30 PM", "5:15 PM"),
-    ("TV Patrol", "5:15 PM", "6:15 PM"),
-    ("Rainbow Ramble", "6:15 PM", "7:15 PM"),
-    ("Your Face Sounds Familiar", "7:15 PM", "8:15 PM"),
-    ("MMK", "8:15 PM", "9:15 PM"),
-    ("Tao Po", "9:15 PM", "10:00 PM"),
-    ("Super Kapamilya Blockbusters", "10:00 PM", "12:00 AM"),
-]
-
-FALLBACK_SUNDAY = [
-    ("Healing Eucharist", "6:00 AM", "7:00 AM"),
-    ("Wikaharian Online World", "7:00 AM", "7:25 AM"),
-    ("Ready Set Read", "7:25 AM", "7:50 AM"),
-    ("Mathdali", "7:50 AM", "8:15 AM"),
-    ("Estudyantipid", "8:15 AM", "8:40 AM"),
-    ("WOW", "8:40 AM", "9:00 AM"),
-    ("KB Family Weekend", "9:00 AM", "12:00 PM"),
-    ("ASAP", "12:00 PM", "2:15 PM"),
-    ("Sunday Blockbusters", "2:15 PM", "4:00 PM"),
-    ("My Puhunan", "4:00 PM", "4:30 PM"),
-    ("Kuan On One", "4:30 PM", "5:15 PM"),
-    ("TV Patrol", "5:15 PM", "6:15 PM"),
-    ("Rainbow Ramble", "6:15 PM", "7:15 PM"),
-    ("Your Face Sounds Familiar", "7:15 PM", "8:15 PM"),
-    ("Rated Korina", "8:15 PM", "9:15 PM"),
-    ("Mega Blockbusters", "9:45 PM", "10:45 PM"),
-    ("Sunday's Best", "10:45 PM", "12:45 AM"),
-]
 
 def parse_time(time_str, base_date):
     clean = time_str.strip().upper()
     clean = re.sub(r"\bNN\b", "PM", clean)
     clean = re.sub(r"\bMN\b", "AM", clean)
-    dt = datetime.strptime(clean, "%I:%M %p")
+    dt = datetime.strptime(clean, "%I:%M%p")
     return base_date.replace(hour=dt.hour, minute=dt.minute, second=0, microsecond=0)
 
-def fetch_html():
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Sec-Ch-Ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
-        "Sec-Ch-Ua-Mobile": "?0",
-        "Sec-Ch-Ua-Platform": '"Windows"',
-        "Sec-Fetch-Dest": "document",
-        "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Site": "none",
-        "Sec-Fetch-User": "?1",
-        "Upgrade-Insecure-Requests": "1"
-    }
-    # Method 1: Requests with full browser headers
-    try:
-        resp = requests.get(URL, headers=headers, timeout=15)
-        if resp.status_code == 200 and len(resp.text) > 1000:
-            return resp.text
-    except Exception:
-        pass
+def fetch_schedules_from_fandom():
+    req = urllib.request.Request(
+        API_URL,
+        headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    )
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+        wikitext = data.get("parse", {}).get("wikitext", {}).get("*", "")
 
-    # Method 2: System curl fallback (common on Ubuntu GitHub runners)
-    try:
-        cmd = [
-            "curl", "-sL", "--compressed",
-            "-H", f"User-Agent: {headers['User-Agent']}",
-            "-H", f"Accept: {headers['Accept']}",
-            "-H", f"Accept-Language: {headers['Accept-Language']}",
-            URL
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
-        if result.returncode == 0 and len(result.stdout) > 1000:
-            return result.stdout
-    except Exception:
-        pass
+    if not wikitext:
+        return None
 
-    return None
+    line_re = re.compile(r"^\*\s*(\d{1,2}:\d{2}\s*(?:am|pm|AM|PM))\s*(?:-|–|—)\s*(.+)$")
+    cur_mode = None
+    schedules = {"weekday": [], "saturday": [], "sunday": []}
+
+    for line in wikitext.splitlines():
+        l = line.strip()
+        if "Mondays-Fridays" in l:
+            cur_mode = "weekday"
+        elif "Saturdays" in l:
+            cur_mode = "saturday"
+        elif "Sundays" in l:
+            cur_mode = "sunday"
+        elif cur_mode:
+            m = line_re.match(l)
+            if m:
+                schedules[cur_mode].append((m.group(1).strip(), m.group(2).strip()))
+
+    if not schedules["weekday"] or not schedules["saturday"] or not schedules["sunday"]:
+        return None
+    return schedules
 
 def get_programs():
-    html_content = fetch_html()
-    day_schedules = {d: [] for d in range(7)}
-
-    if html_content:
-        soup = BeautifulSoup(html_content, "html.parser")
-        time_re = re.compile(
-            r"^(\d{1,2}:\d{2}\s*(?:AM|PM|NN|MN))\s*(?:to|-|–)\s*(\d{1,2}:\d{2}\s*(?:AM|PM|NN|MN))$",
-            re.I
-        )
-        articles = soup.find_all("article")
-        for article in articles:
-            classes = " ".join(article.get("class", []))
-            title_tag = article.find("h3", class_="elementor-post__title")
-            if not title_tag:
-                continue
-
-            raw_text = title_tag.get_text("\n").strip()
-            lines = [l.strip() for l in raw_text.splitlines() if l.strip()]
-            if len(lines) < 2:
-                continue
-
-            show_title = html.unescape(lines[0])
-            time_text = lines[1]
-            m = time_re.match(time_text)
-            if not m:
-                continue
-
-            start_str, stop_str = m.group(1), m.group(2)
-            for day_num, day_class in DAYS_MAP.items():
-                if day_class in classes:
-                    day_schedules[day_num].append((show_title, start_str, stop_str))
-
-    # If Cloudflare returned 403 or empty HTML, use the verified schedule
-    has_live_shows = any(len(shows) > 0 for shows in day_schedules.values())
-    if not has_live_shows:
-        for d in range(5):
-            day_schedules[d] = list(FALLBACK_WEEKDAY)
-        day_schedules[5] = list(FALLBACK_SATURDAY)
-        day_schedules[6] = list(FALLBACK_SUNDAY)
+    try:
+        schedules = fetch_schedules_from_fandom()
+        if not schedules:
+            schedules = FALLBACK_SCHEDULES
+    except Exception as e:
+        print(f"Warning: Fandom API fetch failed ({e}). Using verified fallback schedule.")
+        schedules = FALLBACK_SCHEDULES
 
     now_ph = datetime.now(TZ)
     programs = []
 
     for day_offset in range(7):
         target_date = now_ph + timedelta(days=day_offset)
-        dow = target_date.weekday()
-        shows = day_schedules.get(dow, [])
+        wd = target_date.weekday()
+        if wd == 5:
+            day_shows = schedules["saturday"]
+        elif wd == 6:
+            day_shows = schedules["sunday"]
+        else:
+            day_shows = schedules["weekday"]
 
-        for title, start_str, stop_str in shows:
-            start_dt = parse_time(start_str, target_date)
-            stop_dt = parse_time(stop_str, target_date)
-            if stop_dt <= start_dt:
-                stop_dt += timedelta(days=1)
+        for i, (t_str, title) in enumerate(day_shows):
+            if "off air" in title.lower() or "off-air" in title.lower():
+                continue
+
+            start_dt = parse_time(t_str, target_date)
+
+            if i + 1 < len(day_shows):
+                next_t_str, _ = day_shows[i + 1]
+                stop_dt = parse_time(next_t_str, target_date)
+                if stop_dt <= start_dt:
+                    stop_dt += timedelta(days=1)
+            else:
+                stop_dt = start_dt + timedelta(minutes=60)
 
             programs.append({
                 "start": start_dt.strftime("%Y%m%d%H%M%S +0800"),
