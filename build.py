@@ -1,11 +1,11 @@
-import os
+from collections import defaultdict
 import importlib
+import os
 import pkgutil
 import xml.etree.ElementTree as ET
-from collections import defaultdict
 import scrapers
 
-REPO_RAW_BASE = "https://githubusercontent.com"
+REPO_RAW_BASE = "https://raw.githubusercontent.com/DMCDdev/epg-directory/main/epg"
 
 def slugify(text):
     return text.strip().lower().replace(" ", "-")
@@ -13,11 +13,11 @@ def slugify(text):
 def write_xml(filepath, channel_list):
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
     tv = ET.Element("tv", {"generator-info-name": "epg-directory"})
-    
+
     for meta, _ in channel_list:
         ch = ET.SubElement(tv, "channel", {"id": meta["id"]})
         ET.SubElement(ch, "display-name", {"lang": "en"}).text = meta["name"]
-        
+
     for meta, programs in channel_list:
         for p in programs:
             prog = ET.SubElement(tv, "programme", {
@@ -26,22 +26,22 @@ def write_xml(filepath, channel_list):
                 "channel": meta["id"]
             })
             ET.SubElement(prog, "title", {"lang": "en"}).text = p["title"]
-            
+
     ET.indent(tv, space="  ")
     ET.ElementTree(tv).write(filepath, encoding="utf-8", xml_declaration=True)
 
 def generate_readme(all_channels, by_area, by_category):
     lines = [
-        "# 📺 EPG Directory",
+        "# EPG Directory",
         "",
         "Automated XMLTV Electronic Program Guides grouped by **Area**, **Category**, and **Channel**.",
         "",
-        "### 🌐 Master Guide",
+        "### Master Guide",
         "| Description | Channels | EPG URL |",
         "| :--- | :---: | :--- |",
         f"| All Channels | {len(all_channels)} | `{REPO_RAW_BASE}/all.xml` |",
         "",
-        "### 📍 By Area",
+        "### By Area",
         "| Area | Channels | EPG URL |",
         "| :--- | :---: | :--- |"
     ]
@@ -51,7 +51,7 @@ def generate_readme(all_channels, by_area, by_category):
 
     lines.extend([
         "",
-        "### 🗂️ By Category",
+        "### By Category",
         "| Category | Channels | EPG URL |",
         "| :--- | :---: | :--- |"
     ])
@@ -61,11 +61,11 @@ def generate_readme(all_channels, by_area, by_category):
 
     lines.extend([
         "",
-        "### 📋 Individual Channels",
-        "| Channel Name | `tvg-id` | Area | Category | Single-Channel EPG URL |",
+        "### Individual Channels",
+        "| Channel Name | tvg-id | Area | Category | Single-Channel EPG URL |",
         "| :--- | :--- | :--- | :--- | :--- |"
     ])
-    for meta, _ in sorted(all_channels, key=lambda x: x["name"]):
+    for meta, _ in sorted(all_channels, key=lambda item: item[0]["name"]):
         areas = ", ".join(meta.get("area", []))
         cats = ", ".join(meta.get("category", []))
         ch_slug = slugify(meta["id"])
@@ -80,17 +80,14 @@ def main():
     by_category = defaultdict(list)
 
     for _, module_name, _ in pkgutil.iter_modules(scrapers.__path__):
-        try:
-            mod = importlib.import_module(f"scrapers.{module_name}")
-            meta, programs = mod.get_programs()
-            all_channels.append((meta, programs))
-            for area in meta.get("area", []):
-                by_area[area].append((meta, programs))
-            for cat in meta.get("category", []):
-                by_category[cat].append((meta, programs))
-            print(f"Loaded {meta['name']}: {len(programs)} programs")
-        except Exception as e:
-            print(f"Error scraping {module_name}: {e}")
+        mod = importlib.import_module(f"scrapers.{module_name}")
+        meta, programs = mod.get_programs()
+        print(f"Loaded {meta['name']}: {len(programs)} programs")
+        all_channels.append((meta, programs))
+        for area in meta.get("area", []):
+            by_area[area].append((meta, programs))
+        for cat in meta.get("category", []):
+            by_category[cat].append((meta, programs))
 
     write_xml("epg/all.xml", all_channels)
     for area, items in by_area.items():
