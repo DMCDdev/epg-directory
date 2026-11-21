@@ -15,6 +15,6 @@ Automated XMLTV Electronic Program Guides grouped by **Area**, **Category**, and
 | Category | Channels | EPG URL |
 | :--- | :---: | :--- |
 
-### 📋 Supported Channels
-| Channel Name | `tvg-id` | Area | Category |
-| :--- | :--- | :--- | :--- |
+### 📋 Individual Channels
+| Channel Name | `tvg-id` | Area | Category | Single-Channel EPG URL |
+| :--- | :--- | :--- | :--- | :--- |
