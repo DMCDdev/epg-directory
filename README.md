@@ -20,4 +20,4 @@ Automated XMLTV Electronic Program Guides grouped by **Area**, **Category**, and
 ### Individual Channels
 | Channel Name | tvg-id | Area | Category | Single-Channel EPG URL |
 | :--- | :--- | :--- | :--- | :--- |
-| ALLTV2 | `AllTV.ph` | Philippines | Entertainment | `https://raw.githubusercontent.com/DMCDdev/epg-directory/main/epg/channel/alltv.ph.xml` |
+| ALLTV | `AllTV.ph` | Philippines | Entertainment | `https://raw.githubusercontent.com/DMCDdev/epg-directory/main/epg/channel/alltv.ph.xml` |

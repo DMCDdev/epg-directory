@@ -1,130 +1,151 @@
 <?xml version='1.0' encoding='utf-8'?>
 <tv generator-info-name="epg-directory">
   <channel id="AllTV.ph">
+    <display-name lang="en">ALLTV</display-name>
     <display-name lang="en">ALLTV2</display-name>
+    <display-name lang="en">All TV</display-name>
+    <display-name lang="en">AllTV.ph</display-name>
   </channel>
+  <programme start="20261121050000 +0800" stop="20261121053000 +0800" channel="AllTV.ph">
+    <title lang="en">Tomorrow World</title>
+  </programme>
+  <programme start="20261121053000 +0800" stop="20261121060000 +0800" channel="AllTV.ph">
+    <title lang="en">Kapamilya Daily Mass</title>
+  </programme>
   <programme start="20261121060000 +0800" stop="20261121063000 +0800" channel="AllTV.ph">
-    <title lang="en">Bubu And The Little Owls</title>
+    <title lang="en">LEGO City Adventures</title>
   </programme>
   <programme start="20261121063000 +0800" stop="20261121070000 +0800" channel="AllTV.ph">
-    <title lang="en">Dinoman</title>
+    <title lang="en">Crayon Shai Chan</title>
   </programme>
   <programme start="20261121070000 +0800" stop="20261121073000 +0800" channel="AllTV.ph">
-    <title lang="en">Team Yey</title>
+    <title lang="en">Team YeY! (rerun)</title>
   </programme>
   <programme start="20261121073000 +0800" stop="20261121083000 +0800" channel="AllTV.ph">
-    <title lang="en">Wansapanataym</title>
+    <title lang="en">Wansapanataym (rerun)</title>
   </programme>
-  <programme start="20261121083000 +0800" stop="20261121120000 +0800" channel="AllTV.ph">
-    <title lang="en">KB Family Weekend</title>
+  <programme start="20261121083000 +0800" stop="20261121093000 +0800" channel="AllTV.ph">
+    <title lang="en">Sagot ni Doc.</title>
+  </programme>
+  <programme start="20261121093000 +0800" stop="20261121101500 +0800" channel="AllTV.ph">
+    <title lang="en">Dapat Legal</title>
+  </programme>
+  <programme start="20261121101500 +0800" stop="20261121120000 +0800" channel="AllTV.ph">
+    <title lang="en">Blockbusters sa Umaga</title>
   </programme>
   <programme start="20261121120000 +0800" stop="20261121143000 +0800" channel="AllTV.ph">
     <title lang="en">It's Showtime</title>
   </programme>
-  <programme start="20261121151500 +0800" stop="20261121163000 +0800" channel="AllTV.ph">
+  <programme start="20261121143000 +0800" stop="20261121160000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Action Sabado</title>
   </programme>
-  <programme start="20261121163000 +0800" stop="20261121171500 +0800" channel="AllTV.ph">
-    <title lang="en">SOCO</title>
+  <programme start="20261121160000 +0800" stop="20261121164500 +0800" channel="AllTV.ph">
+    <title lang="en">Tao Po!</title>
   </programme>
-  <programme start="20261121171500 +0800" stop="20261121181500 +0800" channel="AllTV.ph">
-    <title lang="en">TV Patrol</title>
+  <programme start="20261121164500 +0800" stop="20261121170000 +0800" channel="AllTV.ph">
+    <title lang="en">Philippines’ Oddest Job</title>
   </programme>
-  <programme start="20261121181500 +0800" stop="20261121191500 +0800" channel="AllTV.ph">
-    <title lang="en">Rainbow Ramble</title>
+  <programme start="20261121170000 +0800" stop="20261121174500 +0800" channel="AllTV.ph">
+    <title lang="en">S.O.C.O.: Scene Of the Crime Operatives</title>
   </programme>
-  <programme start="20261121191500 +0800" stop="20261121201500 +0800" channel="AllTV.ph">
-    <title lang="en">Your Face Sounds Familiar</title>
+  <programme start="20261121174500 +0800" stop="20261121184500 +0800" channel="AllTV.ph">
+    <title lang="en">TV Patrol Weekend</title>
   </programme>
-  <programme start="20261121201500 +0800" stop="20261121211500 +0800" channel="AllTV.ph">
-    <title lang="en">MMK</title>
+  <programme start="20261121184500 +0800" stop="20261121193000 +0800" channel="AllTV.ph">
+    <title lang="en">Ibang Level To!</title>
   </programme>
-  <programme start="20261121211500 +0800" stop="20261121220000 +0800" channel="AllTV.ph">
-    <title lang="en">Tao Po</title>
+  <programme start="20261121193000 +0800" stop="20261121203000 +0800" channel="AllTV.ph">
+    <title lang="en">Kapamilya, Deal or No Deal (season 6)</title>
   </programme>
-  <programme start="20261121220000 +0800" stop="20261122000000 +0800" channel="AllTV.ph">
+  <programme start="20261121203000 +0800" stop="20261121213000 +0800" channel="AllTV.ph">
+    <title lang="en">MMK: Maaalala Mo Kaya</title>
+  </programme>
+  <programme start="20261121213000 +0800" stop="20261121223000 +0800" channel="AllTV.ph">
+    <title lang="en">Matteo G. Primetime</title>
+  </programme>
+  <programme start="20261121223000 +0800" stop="20261122003000 +0800" channel="AllTV.ph">
     <title lang="en">Super Kapamilya Blockbusters</title>
   </programme>
   <programme start="20261122060000 +0800" stop="20261122070000 +0800" channel="AllTV.ph">
-    <title lang="en">Healing Eucharist</title>
+    <title lang="en">The Healing Eucharist</title>
   </programme>
   <programme start="20261122070000 +0800" stop="20261122072500 +0800" channel="AllTV.ph">
-    <title lang="en">Wikaharian Online World</title>
+    <title lang="en">Wikaharian</title>
   </programme>
   <programme start="20261122072500 +0800" stop="20261122075000 +0800" channel="AllTV.ph">
-    <title lang="en">Ready Set Read</title>
+    <title lang="en">Ready, Set, Read!</title>
   </programme>
   <programme start="20261122075000 +0800" stop="20261122081500 +0800" channel="AllTV.ph">
-    <title lang="en">Mathdali</title>
+    <title lang="en">MathDali</title>
   </programme>
   <programme start="20261122081500 +0800" stop="20261122084000 +0800" channel="AllTV.ph">
     <title lang="en">Estudyantipid</title>
   </programme>
   <programme start="20261122084000 +0800" stop="20261122090000 +0800" channel="AllTV.ph">
-    <title lang="en">WOW</title>
+    <title lang="en">Wow</title>
   </programme>
-  <programme start="20261122090000 +0800" stop="20261122120000 +0800" channel="AllTV.ph">
-    <title lang="en">KB Family Weekend</title>
+  <programme start="20261122090000 +0800" stop="20261122100000 +0800" channel="AllTV.ph">
+    <title lang="en">Wansapanataym (rerun)</title>
   </programme>
-  <programme start="20261122120000 +0800" stop="20261122141500 +0800" channel="AllTV.ph">
-    <title lang="en">ASAP</title>
+  <programme start="20261122100000 +0800" stop="20261122120000 +0800" channel="AllTV.ph">
+    <title lang="en">Blockbusters sa Umaga</title>
   </programme>
-  <programme start="20261122141500 +0800" stop="20261122160000 +0800" channel="AllTV.ph">
+  <programme start="20261122120000 +0800" stop="20261122134500 +0800" channel="AllTV.ph">
+    <title lang="en">Vibe+ Playback</title>
+  </programme>
+  <programme start="20261122134500 +0800" stop="20261122151500 +0800" channel="AllTV.ph">
     <title lang="en">Sunday Blockbusters</title>
   </programme>
-  <programme start="20261122160000 +0800" stop="20261122163000 +0800" channel="AllTV.ph">
-    <title lang="en">My Puhunan</title>
+  <programme start="20261122151500 +0800" stop="20261122154500 +0800" channel="AllTV.ph">
+    <title lang="en">My Puhunan: Kaya Mo!</title>
   </programme>
-  <programme start="20261122163000 +0800" stop="20261122171500 +0800" channel="AllTV.ph">
-    <title lang="en">Kuan On One</title>
+  <programme start="20261122154500 +0800" stop="20261122161500 +0800" channel="AllTV.ph">
+    <title lang="en">Philippines’ Most Haunted</title>
   </programme>
-  <programme start="20261122171500 +0800" stop="20261122181500 +0800" channel="AllTV.ph">
-    <title lang="en">TV Patrol</title>
-  </programme>
-  <programme start="20261122181500 +0800" stop="20261122191500 +0800" channel="AllTV.ph">
-    <title lang="en">Rainbow Ramble</title>
-  </programme>
-  <programme start="20261122191500 +0800" stop="20261122201500 +0800" channel="AllTV.ph">
-    <title lang="en">Your Face Sounds Familiar</title>
-  </programme>
-  <programme start="20261122201500 +0800" stop="20261122211500 +0800" channel="AllTV.ph">
+  <programme start="20261122161500 +0800" stop="20261122171500 +0800" channel="AllTV.ph">
     <title lang="en">Rated Korina</title>
   </programme>
-  <programme start="20261122214500 +0800" stop="20261122224500 +0800" channel="AllTV.ph">
-    <title lang="en">Mega Blockbusters</title>
+  <programme start="20261122171500 +0800" stop="20261122181500 +0800" channel="AllTV.ph">
+    <title lang="en">TV Patrol Weekend</title>
   </programme>
-  <programme start="20261122224500 +0800" stop="20261123004500 +0800" channel="AllTV.ph">
+  <programme start="20261122181500 +0800" stop="20261122190000 +0800" channel="AllTV.ph">
+    <title lang="en">Ibang Level To!</title>
+  </programme>
+  <programme start="20261122190000 +0800" stop="20261122210000 +0800" channel="AllTV.ph">
+    <title lang="en">ASAP XP</title>
+  </programme>
+  <programme start="20261122210000 +0800" stop="20261122220000 +0800" channel="AllTV.ph">
+    <title lang="en">Kapamilya, Deal or No Deal (season 6)</title>
+  </programme>
+  <programme start="20261122220000 +0800" stop="20261122230000 +0800" channel="AllTV.ph">
+    <title lang="en">MMK: Maalaala Mo Kaya</title>
+  </programme>
+  <programme start="20261122230000 +0800" stop="20261123010000 +0800" channel="AllTV.ph">
     <title lang="en">Sunday's Best</title>
   </programme>
   <programme start="20261123053000 +0800" stop="20261123060000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Daily Mass</title>
   </programme>
-  <programme start="20261123060000 +0800" stop="20261123070000 +0800" channel="AllTV.ph">
-    <title lang="en">School Anywhere</title>
+  <programme start="20261123060000 +0800" stop="20261123073000 +0800" channel="AllTV.ph">
+    <title lang="en">Knowledge Channel School Anywhere</title>
   </programme>
-  <programme start="20261123070000 +0800" stop="20261123080000 +0800" channel="AllTV.ph">
-    <title lang="en">Komiks Presents</title>
-  </programme>
-  <programme start="20261123080000 +0800" stop="20261123083000 +0800" channel="AllTV.ph">
+  <programme start="20261123073000 +0800" stop="20261123080000 +0800" channel="AllTV.ph">
     <title lang="en">The Flying House</title>
   </programme>
-  <programme start="20261123083000 +0800" stop="20261123090000 +0800" channel="AllTV.ph">
-    <title lang="en">Superbook Reimagined</title>
+  <programme start="20261123080000 +0800" stop="20261123083000 +0800" channel="AllTV.ph">
+    <title lang="en">Superbook Reimagined (season 5)</title>
   </programme>
-  <programme start="20261123090000 +0800" stop="20261123100000 +0800" channel="AllTV.ph">
-    <title lang="en">Magandang Buhay</title>
-  </programme>
-  <programme start="20261123100000 +0800" stop="20261123120000 +0800" channel="AllTV.ph">
-    <title lang="en">Kapamilya Blockbusters</title>
+  <programme start="20261123083000 +0800" stop="20261123120000 +0800" channel="AllTV.ph">
+    <title lang="en">Blockbusters sa Umaga</title>
   </programme>
   <programme start="20261123120000 +0800" stop="20261123143000 +0800" channel="AllTV.ph">
     <title lang="en">It's Showtime</title>
   </programme>
   <programme start="20261123143000 +0800" stop="20261123151500 +0800" channel="AllTV.ph">
-    <title lang="en">Lavender Fields</title>
+    <title lang="en">Mommy Guard</title>
   </programme>
   <programme start="20261123151500 +0800" stop="20261123160000 +0800" channel="AllTV.ph">
-    <title lang="en">Senior High</title>
+    <title lang="en">Senior High (rerun)</title>
   </programme>
   <programme start="20261123160000 +0800" stop="20261123173000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Gold Hits</title>
@@ -139,49 +160,43 @@
     <title lang="en">TV Patrol</title>
   </programme>
   <programme start="20261123200000 +0800" stop="20261123204500 +0800" channel="AllTV.ph">
-    <title lang="en">FPJ's Batang Quiapo</title>
+    <title lang="en">Coco Martin: Sigabo</title>
   </programme>
   <programme start="20261123204500 +0800" stop="20261123213000 +0800" channel="AllTV.ph">
-    <title lang="en">Roja</title>
+    <title lang="en">Someone, Someday (Last Week)</title>
   </programme>
   <programme start="20261123213000 +0800" stop="20261123221500 +0800" channel="AllTV.ph">
-    <title lang="en">What Lies Beneath</title>
+    <title lang="en">The Loyalty Game: Level Up!</title>
   </programme>
-  <programme start="20261123221500 +0800" stop="20261123224500 +0800" channel="AllTV.ph">
-    <title lang="en">Forbidden Flower</title>
+  <programme start="20261123221500 +0800" stop="20261123230000 +0800" channel="AllTV.ph">
+    <title lang="en">Breeze by the Sea</title>
   </programme>
-  <programme start="20261123224500 +0800" stop="20261123231500 +0800" channel="AllTV.ph">
+  <programme start="20261123230000 +0800" stop="20261124000000 +0800" channel="AllTV.ph">
     <title lang="en">The World Tonight</title>
   </programme>
   <programme start="20261124053000 +0800" stop="20261124060000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Daily Mass</title>
   </programme>
-  <programme start="20261124060000 +0800" stop="20261124070000 +0800" channel="AllTV.ph">
-    <title lang="en">School Anywhere</title>
+  <programme start="20261124060000 +0800" stop="20261124073000 +0800" channel="AllTV.ph">
+    <title lang="en">Knowledge Channel School Anywhere</title>
   </programme>
-  <programme start="20261124070000 +0800" stop="20261124080000 +0800" channel="AllTV.ph">
-    <title lang="en">Komiks Presents</title>
-  </programme>
-  <programme start="20261124080000 +0800" stop="20261124083000 +0800" channel="AllTV.ph">
+  <programme start="20261124073000 +0800" stop="20261124080000 +0800" channel="AllTV.ph">
     <title lang="en">The Flying House</title>
   </programme>
-  <programme start="20261124083000 +0800" stop="20261124090000 +0800" channel="AllTV.ph">
-    <title lang="en">Superbook Reimagined</title>
+  <programme start="20261124080000 +0800" stop="20261124083000 +0800" channel="AllTV.ph">
+    <title lang="en">Superbook Reimagined (season 5)</title>
   </programme>
-  <programme start="20261124090000 +0800" stop="20261124100000 +0800" channel="AllTV.ph">
-    <title lang="en">Magandang Buhay</title>
-  </programme>
-  <programme start="20261124100000 +0800" stop="20261124120000 +0800" channel="AllTV.ph">
-    <title lang="en">Kapamilya Blockbusters</title>
+  <programme start="20261124083000 +0800" stop="20261124120000 +0800" channel="AllTV.ph">
+    <title lang="en">Blockbusters sa Umaga</title>
   </programme>
   <programme start="20261124120000 +0800" stop="20261124143000 +0800" channel="AllTV.ph">
     <title lang="en">It's Showtime</title>
   </programme>
   <programme start="20261124143000 +0800" stop="20261124151500 +0800" channel="AllTV.ph">
-    <title lang="en">Lavender Fields</title>
+    <title lang="en">Mommy Guard</title>
   </programme>
   <programme start="20261124151500 +0800" stop="20261124160000 +0800" channel="AllTV.ph">
-    <title lang="en">Senior High</title>
+    <title lang="en">Senior High (rerun)</title>
   </programme>
   <programme start="20261124160000 +0800" stop="20261124173000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Gold Hits</title>
@@ -196,49 +211,43 @@
     <title lang="en">TV Patrol</title>
   </programme>
   <programme start="20261124200000 +0800" stop="20261124204500 +0800" channel="AllTV.ph">
-    <title lang="en">FPJ's Batang Quiapo</title>
+    <title lang="en">Coco Martin: Sigabo</title>
   </programme>
   <programme start="20261124204500 +0800" stop="20261124213000 +0800" channel="AllTV.ph">
-    <title lang="en">Roja</title>
+    <title lang="en">Someone, Someday (Last Week)</title>
   </programme>
   <programme start="20261124213000 +0800" stop="20261124221500 +0800" channel="AllTV.ph">
-    <title lang="en">What Lies Beneath</title>
+    <title lang="en">The Loyalty Game: Level Up!</title>
   </programme>
-  <programme start="20261124221500 +0800" stop="20261124224500 +0800" channel="AllTV.ph">
-    <title lang="en">Forbidden Flower</title>
+  <programme start="20261124221500 +0800" stop="20261124230000 +0800" channel="AllTV.ph">
+    <title lang="en">Breeze by the Sea</title>
   </programme>
-  <programme start="20261124224500 +0800" stop="20261124231500 +0800" channel="AllTV.ph">
+  <programme start="20261124230000 +0800" stop="20261125000000 +0800" channel="AllTV.ph">
     <title lang="en">The World Tonight</title>
   </programme>
   <programme start="20261125053000 +0800" stop="20261125060000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Daily Mass</title>
   </programme>
-  <programme start="20261125060000 +0800" stop="20261125070000 +0800" channel="AllTV.ph">
-    <title lang="en">School Anywhere</title>
+  <programme start="20261125060000 +0800" stop="20261125073000 +0800" channel="AllTV.ph">
+    <title lang="en">Knowledge Channel School Anywhere</title>
   </programme>
-  <programme start="20261125070000 +0800" stop="20261125080000 +0800" channel="AllTV.ph">
-    <title lang="en">Komiks Presents</title>
-  </programme>
-  <programme start="20261125080000 +0800" stop="20261125083000 +0800" channel="AllTV.ph">
+  <programme start="20261125073000 +0800" stop="20261125080000 +0800" channel="AllTV.ph">
     <title lang="en">The Flying House</title>
   </programme>
-  <programme start="20261125083000 +0800" stop="20261125090000 +0800" channel="AllTV.ph">
-    <title lang="en">Superbook Reimagined</title>
+  <programme start="20261125080000 +0800" stop="20261125083000 +0800" channel="AllTV.ph">
+    <title lang="en">Superbook Reimagined (season 5)</title>
   </programme>
-  <programme start="20261125090000 +0800" stop="20261125100000 +0800" channel="AllTV.ph">
-    <title lang="en">Magandang Buhay</title>
-  </programme>
-  <programme start="20261125100000 +0800" stop="20261125120000 +0800" channel="AllTV.ph">
-    <title lang="en">Kapamilya Blockbusters</title>
+  <programme start="20261125083000 +0800" stop="20261125120000 +0800" channel="AllTV.ph">
+    <title lang="en">Blockbusters sa Umaga</title>
   </programme>
   <programme start="20261125120000 +0800" stop="20261125143000 +0800" channel="AllTV.ph">
     <title lang="en">It's Showtime</title>
   </programme>
   <programme start="20261125143000 +0800" stop="20261125151500 +0800" channel="AllTV.ph">
-    <title lang="en">Lavender Fields</title>
+    <title lang="en">Mommy Guard</title>
   </programme>
   <programme start="20261125151500 +0800" stop="20261125160000 +0800" channel="AllTV.ph">
-    <title lang="en">Senior High</title>
+    <title lang="en">Senior High (rerun)</title>
   </programme>
   <programme start="20261125160000 +0800" stop="20261125173000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Gold Hits</title>
@@ -253,49 +262,43 @@
     <title lang="en">TV Patrol</title>
   </programme>
   <programme start="20261125200000 +0800" stop="20261125204500 +0800" channel="AllTV.ph">
-    <title lang="en">FPJ's Batang Quiapo</title>
+    <title lang="en">Coco Martin: Sigabo</title>
   </programme>
   <programme start="20261125204500 +0800" stop="20261125213000 +0800" channel="AllTV.ph">
-    <title lang="en">Roja</title>
+    <title lang="en">Someone, Someday (Last Week)</title>
   </programme>
   <programme start="20261125213000 +0800" stop="20261125221500 +0800" channel="AllTV.ph">
-    <title lang="en">What Lies Beneath</title>
+    <title lang="en">The Loyalty Game: Level Up!</title>
   </programme>
-  <programme start="20261125221500 +0800" stop="20261125224500 +0800" channel="AllTV.ph">
-    <title lang="en">Forbidden Flower</title>
+  <programme start="20261125221500 +0800" stop="20261125230000 +0800" channel="AllTV.ph">
+    <title lang="en">Breeze by the Sea</title>
   </programme>
-  <programme start="20261125224500 +0800" stop="20261125231500 +0800" channel="AllTV.ph">
+  <programme start="20261125230000 +0800" stop="20261126000000 +0800" channel="AllTV.ph">
     <title lang="en">The World Tonight</title>
   </programme>
   <programme start="20261126053000 +0800" stop="20261126060000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Daily Mass</title>
   </programme>
-  <programme start="20261126060000 +0800" stop="20261126070000 +0800" channel="AllTV.ph">
-    <title lang="en">School Anywhere</title>
+  <programme start="20261126060000 +0800" stop="20261126073000 +0800" channel="AllTV.ph">
+    <title lang="en">Knowledge Channel School Anywhere</title>
   </programme>
-  <programme start="20261126070000 +0800" stop="20261126080000 +0800" channel="AllTV.ph">
-    <title lang="en">Komiks Presents</title>
-  </programme>
-  <programme start="20261126080000 +0800" stop="20261126083000 +0800" channel="AllTV.ph">
+  <programme start="20261126073000 +0800" stop="20261126080000 +0800" channel="AllTV.ph">
     <title lang="en">The Flying House</title>
   </programme>
-  <programme start="20261126083000 +0800" stop="20261126090000 +0800" channel="AllTV.ph">
-    <title lang="en">Superbook Reimagined</title>
+  <programme start="20261126080000 +0800" stop="20261126083000 +0800" channel="AllTV.ph">
+    <title lang="en">Superbook Reimagined (season 5)</title>
   </programme>
-  <programme start="20261126090000 +0800" stop="20261126100000 +0800" channel="AllTV.ph">
-    <title lang="en">Magandang Buhay</title>
-  </programme>
-  <programme start="20261126100000 +0800" stop="20261126120000 +0800" channel="AllTV.ph">
-    <title lang="en">Kapamilya Blockbusters</title>
+  <programme start="20261126083000 +0800" stop="20261126120000 +0800" channel="AllTV.ph">
+    <title lang="en">Blockbusters sa Umaga</title>
   </programme>
   <programme start="20261126120000 +0800" stop="20261126143000 +0800" channel="AllTV.ph">
     <title lang="en">It's Showtime</title>
   </programme>
   <programme start="20261126143000 +0800" stop="20261126151500 +0800" channel="AllTV.ph">
-    <title lang="en">Lavender Fields</title>
+    <title lang="en">Mommy Guard</title>
   </programme>
   <programme start="20261126151500 +0800" stop="20261126160000 +0800" channel="AllTV.ph">
-    <title lang="en">Senior High</title>
+    <title lang="en">Senior High (rerun)</title>
   </programme>
   <programme start="20261126160000 +0800" stop="20261126173000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Gold Hits</title>
@@ -310,49 +313,43 @@
     <title lang="en">TV Patrol</title>
   </programme>
   <programme start="20261126200000 +0800" stop="20261126204500 +0800" channel="AllTV.ph">
-    <title lang="en">FPJ's Batang Quiapo</title>
+    <title lang="en">Coco Martin: Sigabo</title>
   </programme>
   <programme start="20261126204500 +0800" stop="20261126213000 +0800" channel="AllTV.ph">
-    <title lang="en">Roja</title>
+    <title lang="en">Someone, Someday (Last Week)</title>
   </programme>
   <programme start="20261126213000 +0800" stop="20261126221500 +0800" channel="AllTV.ph">
-    <title lang="en">What Lies Beneath</title>
+    <title lang="en">The Loyalty Game: Level Up!</title>
   </programme>
-  <programme start="20261126221500 +0800" stop="20261126224500 +0800" channel="AllTV.ph">
-    <title lang="en">Forbidden Flower</title>
+  <programme start="20261126221500 +0800" stop="20261126230000 +0800" channel="AllTV.ph">
+    <title lang="en">Breeze by the Sea</title>
   </programme>
-  <programme start="20261126224500 +0800" stop="20261126231500 +0800" channel="AllTV.ph">
+  <programme start="20261126230000 +0800" stop="20261127000000 +0800" channel="AllTV.ph">
     <title lang="en">The World Tonight</title>
   </programme>
   <programme start="20261127053000 +0800" stop="20261127060000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Daily Mass</title>
   </programme>
-  <programme start="20261127060000 +0800" stop="20261127070000 +0800" channel="AllTV.ph">
-    <title lang="en">School Anywhere</title>
+  <programme start="20261127060000 +0800" stop="20261127073000 +0800" channel="AllTV.ph">
+    <title lang="en">Knowledge Channel School Anywhere</title>
   </programme>
-  <programme start="20261127070000 +0800" stop="20261127080000 +0800" channel="AllTV.ph">
-    <title lang="en">Komiks Presents</title>
-  </programme>
-  <programme start="20261127080000 +0800" stop="20261127083000 +0800" channel="AllTV.ph">
+  <programme start="20261127073000 +0800" stop="20261127080000 +0800" channel="AllTV.ph">
     <title lang="en">The Flying House</title>
   </programme>
-  <programme start="20261127083000 +0800" stop="20261127090000 +0800" channel="AllTV.ph">
-    <title lang="en">Superbook Reimagined</title>
+  <programme start="20261127080000 +0800" stop="20261127083000 +0800" channel="AllTV.ph">
+    <title lang="en">Superbook Reimagined (season 5)</title>
   </programme>
-  <programme start="20261127090000 +0800" stop="20261127100000 +0800" channel="AllTV.ph">
-    <title lang="en">Magandang Buhay</title>
-  </programme>
-  <programme start="20261127100000 +0800" stop="20261127120000 +0800" channel="AllTV.ph">
-    <title lang="en">Kapamilya Blockbusters</title>
+  <programme start="20261127083000 +0800" stop="20261127120000 +0800" channel="AllTV.ph">
+    <title lang="en">Blockbusters sa Umaga</title>
   </programme>
   <programme start="20261127120000 +0800" stop="20261127143000 +0800" channel="AllTV.ph">
     <title lang="en">It's Showtime</title>
   </programme>
   <programme start="20261127143000 +0800" stop="20261127151500 +0800" channel="AllTV.ph">
-    <title lang="en">Lavender Fields</title>
+    <title lang="en">Mommy Guard</title>
   </programme>
   <programme start="20261127151500 +0800" stop="20261127160000 +0800" channel="AllTV.ph">
-    <title lang="en">Senior High</title>
+    <title lang="en">Senior High (rerun)</title>
   </programme>
   <programme start="20261127160000 +0800" stop="20261127173000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Gold Hits</title>
@@ -367,18 +364,18 @@
     <title lang="en">TV Patrol</title>
   </programme>
   <programme start="20261127200000 +0800" stop="20261127204500 +0800" channel="AllTV.ph">
-    <title lang="en">FPJ's Batang Quiapo</title>
+    <title lang="en">Coco Martin: Sigabo</title>
   </programme>
   <programme start="20261127204500 +0800" stop="20261127213000 +0800" channel="AllTV.ph">
-    <title lang="en">Roja</title>
+    <title lang="en">Someone, Someday (Last Week)</title>
   </programme>
   <programme start="20261127213000 +0800" stop="20261127221500 +0800" channel="AllTV.ph">
-    <title lang="en">What Lies Beneath</title>
+    <title lang="en">The Loyalty Game: Level Up!</title>
   </programme>
-  <programme start="20261127221500 +0800" stop="20261127224500 +0800" channel="AllTV.ph">
-    <title lang="en">Forbidden Flower</title>
+  <programme start="20261127221500 +0800" stop="20261127230000 +0800" channel="AllTV.ph">
+    <title lang="en">Breeze by the Sea</title>
   </programme>
-  <programme start="20261127224500 +0800" stop="20261127231500 +0800" channel="AllTV.ph">
+  <programme start="20261127230000 +0800" stop="20261128000000 +0800" channel="AllTV.ph">
     <title lang="en">The World Tonight</title>
   </programme>
 </tv>
