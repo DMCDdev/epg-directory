@@ -21,6 +21,6 @@ jobs:
       - run: python build.py
       - run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@://github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add epg/ README.md
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update EPG directory & README" && git push)
