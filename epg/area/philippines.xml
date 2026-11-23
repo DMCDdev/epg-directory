@@ -6,63 +6,6 @@
     <display-name lang="en">All TV</display-name>
     <display-name lang="en">AllTV.ph</display-name>
   </channel>
-  <programme start="20261122060000 +0800" stop="20261122070000 +0800" channel="AllTV.ph">
-    <title lang="en">The Healing Eucharist</title>
-  </programme>
-  <programme start="20261122070000 +0800" stop="20261122072500 +0800" channel="AllTV.ph">
-    <title lang="en">Wikaharian</title>
-  </programme>
-  <programme start="20261122072500 +0800" stop="20261122075000 +0800" channel="AllTV.ph">
-    <title lang="en">Ready, Set, Read!</title>
-  </programme>
-  <programme start="20261122075000 +0800" stop="20261122081500 +0800" channel="AllTV.ph">
-    <title lang="en">MathDali</title>
-  </programme>
-  <programme start="20261122081500 +0800" stop="20261122084000 +0800" channel="AllTV.ph">
-    <title lang="en">Estudyantipid</title>
-  </programme>
-  <programme start="20261122084000 +0800" stop="20261122090000 +0800" channel="AllTV.ph">
-    <title lang="en">Wow</title>
-  </programme>
-  <programme start="20261122090000 +0800" stop="20261122100000 +0800" channel="AllTV.ph">
-    <title lang="en">Wansapanataym (rerun)</title>
-  </programme>
-  <programme start="20261122100000 +0800" stop="20261122120000 +0800" channel="AllTV.ph">
-    <title lang="en">Blockbusters sa Umaga</title>
-  </programme>
-  <programme start="20261122120000 +0800" stop="20261122134500 +0800" channel="AllTV.ph">
-    <title lang="en">Vibe+ Playback</title>
-  </programme>
-  <programme start="20261122134500 +0800" stop="20261122151500 +0800" channel="AllTV.ph">
-    <title lang="en">Sunday Blockbusters</title>
-  </programme>
-  <programme start="20261122151500 +0800" stop="20261122154500 +0800" channel="AllTV.ph">
-    <title lang="en">My Puhunan: Kaya Mo!</title>
-  </programme>
-  <programme start="20261122154500 +0800" stop="20261122161500 +0800" channel="AllTV.ph">
-    <title lang="en">Philippines’ Most Haunted</title>
-  </programme>
-  <programme start="20261122161500 +0800" stop="20261122171500 +0800" channel="AllTV.ph">
-    <title lang="en">Rated Korina</title>
-  </programme>
-  <programme start="20261122171500 +0800" stop="20261122181500 +0800" channel="AllTV.ph">
-    <title lang="en">TV Patrol Weekend</title>
-  </programme>
-  <programme start="20261122181500 +0800" stop="20261122190000 +0800" channel="AllTV.ph">
-    <title lang="en">Ibang Level To!</title>
-  </programme>
-  <programme start="20261122190000 +0800" stop="20261122210000 +0800" channel="AllTV.ph">
-    <title lang="en">ASAP XP</title>
-  </programme>
-  <programme start="20261122210000 +0800" stop="20261122220000 +0800" channel="AllTV.ph">
-    <title lang="en">Kapamilya, Deal or No Deal (season 6)</title>
-  </programme>
-  <programme start="20261122220000 +0800" stop="20261122230000 +0800" channel="AllTV.ph">
-    <title lang="en">MMK: Maalaala Mo Kaya</title>
-  </programme>
-  <programme start="20261122230000 +0800" stop="20261123010000 +0800" channel="AllTV.ph">
-    <title lang="en">Sunday's Best</title>
-  </programme>
   <programme start="20261123053000 +0800" stop="20261123060000 +0800" channel="AllTV.ph">
     <title lang="en">Kapamilya Daily Mass</title>
   </programme>
@@ -377,5 +320,62 @@
   </programme>
   <programme start="20261128223000 +0800" stop="20261129003000 +0800" channel="AllTV.ph">
     <title lang="en">Super Kapamilya Blockbusters</title>
+  </programme>
+  <programme start="20261129060000 +0800" stop="20261129070000 +0800" channel="AllTV.ph">
+    <title lang="en">The Healing Eucharist</title>
+  </programme>
+  <programme start="20261129070000 +0800" stop="20261129072500 +0800" channel="AllTV.ph">
+    <title lang="en">Wikaharian</title>
+  </programme>
+  <programme start="20261129072500 +0800" stop="20261129075000 +0800" channel="AllTV.ph">
+    <title lang="en">Ready, Set, Read!</title>
+  </programme>
+  <programme start="20261129075000 +0800" stop="20261129081500 +0800" channel="AllTV.ph">
+    <title lang="en">MathDali</title>
+  </programme>
+  <programme start="20261129081500 +0800" stop="20261129084000 +0800" channel="AllTV.ph">
+    <title lang="en">Estudyantipid</title>
+  </programme>
+  <programme start="20261129084000 +0800" stop="20261129090000 +0800" channel="AllTV.ph">
+    <title lang="en">Wow</title>
+  </programme>
+  <programme start="20261129090000 +0800" stop="20261129100000 +0800" channel="AllTV.ph">
+    <title lang="en">Wansapanataym (rerun)</title>
+  </programme>
+  <programme start="20261129100000 +0800" stop="20261129120000 +0800" channel="AllTV.ph">
+    <title lang="en">Blockbusters sa Umaga</title>
+  </programme>
+  <programme start="20261129120000 +0800" stop="20261129134500 +0800" channel="AllTV.ph">
+    <title lang="en">Vibe+ Playback</title>
+  </programme>
+  <programme start="20261129134500 +0800" stop="20261129151500 +0800" channel="AllTV.ph">
+    <title lang="en">Sunday Blockbusters</title>
+  </programme>
+  <programme start="20261129151500 +0800" stop="20261129154500 +0800" channel="AllTV.ph">
+    <title lang="en">My Puhunan: Kaya Mo!</title>
+  </programme>
+  <programme start="20261129154500 +0800" stop="20261129161500 +0800" channel="AllTV.ph">
+    <title lang="en">Philippines’ Most Haunted</title>
+  </programme>
+  <programme start="20261129161500 +0800" stop="20261129171500 +0800" channel="AllTV.ph">
+    <title lang="en">Rated Korina</title>
+  </programme>
+  <programme start="20261129171500 +0800" stop="20261129181500 +0800" channel="AllTV.ph">
+    <title lang="en">TV Patrol Weekend</title>
+  </programme>
+  <programme start="20261129181500 +0800" stop="20261129190000 +0800" channel="AllTV.ph">
+    <title lang="en">Ibang Level To!</title>
+  </programme>
+  <programme start="20261129190000 +0800" stop="20261129210000 +0800" channel="AllTV.ph">
+    <title lang="en">ASAP XP</title>
+  </programme>
+  <programme start="20261129210000 +0800" stop="20261129220000 +0800" channel="AllTV.ph">
+    <title lang="en">Kapamilya, Deal or No Deal (season 6)</title>
+  </programme>
+  <programme start="20261129220000 +0800" stop="20261129230000 +0800" channel="AllTV.ph">
+    <title lang="en">MMK: Maalaala Mo Kaya</title>
+  </programme>
+  <programme start="20261129230000 +0800" stop="20261130010000 +0800" channel="AllTV.ph">
+    <title lang="en">Sunday's Best</title>
   </programme>
 </tv>
